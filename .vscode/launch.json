@@ -1,0 +1,12 @@
+{
+    // Use Edge to open index.html
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Launch Edge against index.html",
+            "file": "${workspaceFolder}/index.html"
+        }
+    ]
+}
