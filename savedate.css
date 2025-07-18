@@ -1,0 +1,505 @@
+body {
+  background-color: #f5f3f0;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+}
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.save-the-date-header {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 2s ease-out forwards;
+}
+.save-the-date-header h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: #2c2c2c;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: none;
+}
+.save-the-date-header .script-text {
+  font-family: "Pinyon Script", cursive;
+  font-size: 5rem;
+  font-weight: 500;
+  color: #2c2c2c;
+  margin: 0 20px;
+  text-transform: lowercase;
+}
+.photo-grid {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  height: 400px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.photo-grid.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.photo-container {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.date-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 8rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+}
+.names-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.names-section h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.address-section {
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.address-section.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.calendar-section {
+  text-align: center;
+  margin: 30px 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.calendar-section.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.calendar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: #666;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.calendar-left,
+.calendar-right {
+  font-weight: 400;
+  flex: 0 0 auto;
+  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.calendar-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 2px solid #ab7200;
+  border-right: 2px solid #ab7200;
+  padding: 0 30px;
+  flex: 0 0 auto;
+}
+.calendar-day {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.calendar-month {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 2px;
+}
+.calendar-time {
+  font-size: 1.1rem;
+  color: #ab7200;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.countdown-section {
+  text-align: center;
+  margin: 60px 0 40px 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.countdown-section.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.countdown-item {
+  text-align: center;
+  min-width: 80px;
+}
+.countdown-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  margin-bottom: 5px;
+  background: rgba(171, 114, 0, 0.8);
+  border: 1px solid rgba(171, 114, 0, 0.3);
+  border-radius: 12px;
+  padding: 20px 15px;
+  box-shadow: 0 4px 12px rgba(171, 114, 0, 0.2);
+  min-width: 80px;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.countdown-number:hover {
+  transform: translateY(-1px);
+  background: rgba(171, 114, 0, 0.9);
+  box-shadow: 0 6px 16px rgba(171, 114, 0, 0.25);
+}
+.countdown-number::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  border-radius: 12px;
+  pointer-events: none;
+}
+.countdown-label {
+  font-size: 0.9rem;
+  color: #ab7200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ab7200;
+  animation: confetti-fall 3s linear infinite;
+}
+.confetti-piece:nth-child(odd) {
+  background: #d4940a;
+  border-radius: 50%;
+}
+.confetti-piece:nth-child(3n) {
+  background: #f5f3f0;
+}
+.confetti-piece:nth-child(4n) {
+  background: #8b5a00;
+  transform: rotate(45deg);
+}
+.confetti-piece:nth-child(5n) {
+  background: #ff6b6b;
+  border-radius: 50%;
+}
+.confetti-piece:nth-child(6n) {
+  background: #4ecdc4;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+.celebration-message {
+  text-align: center;
+  color: #2c2c2c;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 20px;
+  animation: celebration-fade-in 1s ease-out;
+  display: none;
+  white-space: nowrap;
+}
+@keyframes celebration-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.calendar-button-section {
+  text-align: center;
+  margin: 30px 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.calendar-button-section.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.add-to-calendar-btn {
+  background: linear-gradient(135deg, #ab7200 0%, #d4940a 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(171, 114, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-to-calendar-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(171, 114, 0, 0.4);
+  background: linear-gradient(135deg, #d4940a 0%, #ab7200 100%);
+}
+
+.add-to-calendar-btn:active {
+  transform: translateY(0);
+}
+
+.add-to-calendar-btn i {
+  font-size: 1.2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 20px 15px;
+  }
+  .save-the-date-header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    margin-bottom: -30px;
+  }
+  .save-the-date-header .script-text {
+    font-size: 5rem;
+    margin: 0 10px;
+  }
+  .photo-grid {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+  }
+  .photo-container {
+    height: 250px;
+  }
+  .date-overlay {
+    font-size: 10rem;
+    bottom: 15px;
+  }
+  .names-section h2 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+  .address-section {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .celebration-message {
+    font-size: 1.5rem;
+  }
+  .calendar-container {
+    gap: 20px;
+    font-size: 1.2rem;
+  }
+  .calendar-left,
+  .calendar-right {
+    min-width: 70px;
+  }
+  .calendar-center {
+    padding: 0 25px;
+  }
+  .calendar-day {
+    font-size: 2.8rem;
+  }
+  .calendar-month {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  .calendar-time {
+    font-size: 1rem;
+  }
+  .countdown-section {
+    margin: 40px 0 20px 0;
+  }
+  .countdown-container {
+    gap: 25px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .countdown-item {
+    flex: 0 0 calc(25% - 20px);
+    min-width: 65px;
+  }
+  .countdown-number {
+    font-size: 2.2rem;
+    padding: 15px 12px;
+    min-width: 65px;
+  }
+  .countdown-label {
+    font-size: 0.8rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: 600;
+  }
+  .calendar-button-section {
+    margin: 20px 0;
+  }
+  .add-to-calendar-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  .add-to-calendar-btn i {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 576px) {
+  .save-the-date-header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: -30px;
+  }
+  .save-the-date-header .script-text {
+    font-size: 2.8rem;
+  }
+  .photo-container {
+    height: 200px;
+  }
+  .date-overlay {
+    font-size: 5rem;
+  }
+  .names-section h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  .address-section {
+    font-size: 0.9rem;
+  }
+  .celebration-message {
+    font-size: 1.2rem;
+  }
+  .calendar-container {
+    gap: 10px;
+    font-size: 1.1rem;
+  }
+  .calendar-center {
+    padding: 0 15px;
+  }
+  .calendar-day {
+    font-size: 2.3rem;
+  }
+  .calendar-month {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .calendar-time {
+    font-size: 0.9rem;
+  }
+  .countdown-container {
+    gap: 15px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .countdown-item {
+    flex: 0 0 calc(25% - 12px);
+    min-width: 55px;
+  }
+  .countdown-number {
+    font-size: 1.8rem;
+    padding: 12px 8px;
+    min-width: 55px;
+  }
+  .countdown-label {
+    font-size: 0.7rem;
+  }
+  .add-to-calendar-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .add-to-calendar-btn i {
+    font-size: 1rem;
+  }
+}

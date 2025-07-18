@@ -11,8 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-    <script src="timeline.js"></script>
+    <link rel="stylesheet" href="savedate.css" />
     <link rel="stylesheet" href="timeline.css" />
     <!-- Font Awesome -->
     <link
@@ -29,6 +28,12 @@
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap"
       rel="stylesheet"
     />
     <!-- MDB JS -->
@@ -184,5 +189,97 @@
         </div>
       </div>
     </section>
+    <!-- save date -->
+    <div class="container-fluid">
+      <!-- Header -->
+      <div class="save-the-date-header">
+        <h1>SAVE <span class="script-text">the</span> DATE</h1>
+      </div>
+      <!-- Names -->
+
+      <!-- Calendar Date -->
+      <div class="calendar-section">
+        <div class="calendar-container">
+          <div class="calendar-left">
+            <div>SATURDAY</div>
+            <div class="calendar-time">06:00 PM</div>
+          </div>
+          <div class="calendar-center">
+            <div class="calendar-day">16</div>
+            <div class="calendar-month">August</div>
+          </div>
+          <div class="calendar-right">2025</div>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="address-section">123 Grand Hotel, Singapore, ST 12345</div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-section">
+        <div class="countdown-container">
+          <div class="countdown-item">
+            <div class="countdown-number" id="days">00</div>
+            <div class="countdown-label">DAYS</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="hours">00</div>
+            <div class="countdown-label">HOURS</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="minutes">00</div>
+            <div class="countdown-label">MINUTES</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="seconds">00</div>
+            <div class="countdown-label">SECONDS</div>
+          </div>
+        </div>
+
+        <!-- Celebration Message -->
+        <div class="celebration-message" id="celebration-message">
+          🎉 IT'S THE BIG DAY! 🎉<br />
+          <div style="font-size: 1.2rem; margin-top: 10px">
+            Happy Wedding Day!
+          </div>
+        </div>
+      </div>
+
+      <!-- Add to Calendar Button -->
+      <div class="calendar-button-section">
+        <button class="add-to-calendar-btn" onclick="addToGoogleCalendar()">
+          <i class="fas fa-calendar-plus"></i>
+          Add to Google Calendar
+        </button>
+      </div>
+
+      <!-- Photo Grid -->
+      <div class="photo-grid">
+        <div class="photo-container">
+          <img
+            src="images/Carousell-Image-5.png"
+            alt="Couple walking in field"
+          />
+          <div class="date-overlay">16</div>
+        </div>
+        <div class="photo-container">
+          <img
+            src="images/Carousell-Image-3.png"
+            alt="Couple silhouette at sunset"
+          />
+          <div class="date-overlay">08</div>
+        </div>
+        <div class="photo-container">
+          <img src="images/Carousell-Image-4.png" alt="Couple in wheat field" />
+          <div class="date-overlay">25</div>
+        </div>
+      </div>
+
+      <!-- Confetti Container -->
+      <div class="confetti" id="confetti"></div>
+    </div>
   </body>
+  <script src="script.js" defer></script>
+  <script src="timeline.js"></script>
+  <script src="savedate.js"></script>
 </html>
