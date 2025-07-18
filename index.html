@@ -1,92 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TVISample</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=GFS+Didot&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=GFS+Didot&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+    <script src="timeline.js"></script>
+    <link rel="stylesheet" href="timeline.css" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- MDB JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.umd.min.js"></script>
+  </head>
+  <body>
     <section class="hero-section">
-        <nav class="navbar">
-            <ul class="navbar-left">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#schedule">SCHEDULE</a></li>
-            </ul>
-            <ul class="navbar-right">
-                <li><a href="#hotels">HOTELS & TRAVEL</a></li>
-                <li><a href="#gallery">GALLERY</a></li>
-                <li><a href="#rsvp">RSVP</a></li>
-            </ul>
-        </nav>
-        <div class="hero-content">
-            <h1>ALEX & MASON </h1>
-        </div>
+      <nav class="navbar">
+        <ul class="navbar-left">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#schedule">SCHEDULE</a></li>
+        </ul>
+        <ul class="navbar-right">
+          <li><a href="#hotels">HOTELS & TRAVEL</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content">
+        <h1>ALEX & MASON</h1>
+      </div>
     </section>
-   <section class="text-section">
-    <div class="split-container">
+    <section class="text-section">
+      <div class="split-container">
         <div class="split-image">
-            <div class="image-frame"></div>
+          <div class="image-frame"></div>
         </div>
         <div class="split-text">
-            <div class="text-container">
-                <h2 class="text-title">OUR STORY</h2>
-                <p class="text-content">
-                    It all started on a rainy Tuesday morning at Café Luna when Alex accidentally bumped into Mason, spilling coffee all over his laptop. What began as frantic apologies turned into a three-hour conversation about everything and nothing. Three months later, Mason surprised Alex with a weekend trip to the mountains where they spent hours hiking, getting lost, and sharing stories under the stars. It was there, sitting by a campfire, that they both knew this was something special.  
-                </p>
-            </div>
+          <div class="text-container">
+            <h2 class="text-title">OUR STORY</h2>
+            <p class="text-content">
+              It all started on a rainy Tuesday morning at Café Luna when Alex
+              accidentally bumped into Mason, spilling coffee all over his
+              laptop. What began as frantic apologies turned into a three-hour
+              conversation about everything and nothing. Three months later,
+              Mason surprised Alex with a weekend trip to the mountains where
+              they spent hours hiking, getting lost, and sharing stories under
+              the stars. It was there, sitting by a campfire, that they both
+              knew this was something special.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
+    <!-- Film Strip Carousel Section -->
+    <div class="film-strip-section">
+      <div class="film-strip-container">
+        <div class="film-strip">
+          <div class="film-track" id="filmTrack">
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+            <div class="film-frame">
+              <div class="film-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-<!-- Film Strip Carousel Section -->
-<div class="film-strip-section">
-   <div class="film-strip-container">
-       <div class="film-strip">
-           <div class="film-track" id="filmTrack">
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-               <div class="film-frame">
-                   <div class="film-image"></div>
-               </div>
-           </div>
-       </div>
-   </div>
-</div>
 
-</body>
+    <!-- timeline -->
+    <section style="background-color: #f0f2f5">
+      <div class="container py-5">
+        <div class="main-timeline-2">
+          <div class="timeline-2 left-2">
+            <div class="timeline-year">2023</div>
+            <div class="card">
+              <img
+                src="images/Carousell-Image-3.png"
+                class="card-img-top"
+                alt="Responsive image"
+              />
+              <div class="card-body p-4">
+                <h4 class="fw-bold mb-4">The First Encounter</h4>
+                <p class="mb-0">
+                  We met by chance, not knowing that this moment would mark the
+                  beginning of something beautiful. A simple hello turned into
+                  hours of laughter and conversations we never wanted to end.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-2 right-2">
+            <div class="timeline-year">2024</div>
+
+            <div class="card">
+              <img
+                src="images/Carousell-Image-5.png"
+                class="card-img-top"
+                alt="Responsive image"
+              />
+              <div class="card-body p-4">
+                <h4 class="fw-bold mb-4">Building Memories</h4>
+                <p class="mb-0">
+                  From small adventures to big milestones, every moment brought
+                  us closer. We learned, grew, and supported each other through
+                  it all — falling deeper in love with every passing day.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-2 left-2">
+            <div class="timeline-year">2025</div>
+
+            <div class="card">
+              <img
+                src="images/Carousell-Image-1.jpg"
+                class="card-img-top"
+                alt="Responsive image"
+              />
+              <div class="card-body p-4">
+                <h4 class="fw-bold mb-4">We Say “I Do”</h4>
+                <p class="mb-0">
+                  With hearts full of joy, we invite you to witness our union as
+                  we take the next step in our journey — a celebration of love,
+                  laughter, and forever together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

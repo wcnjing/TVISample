@@ -1,0 +1,131 @@
+.main-timeline-2 {
+  position: relative;
+}
+
+.main-timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background-color: #ccc;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.6s ease-in-out;
+}
+
+.main-timeline-2.active::after {
+  transform: scaleY(1);
+  background-color: #ab7200;
+}
+
+.timeline-2 {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.timeline-2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -11px;
+  background-color: #ab7200;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left-2 {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+.right-2 {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+.left-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.right-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right-2::after {
+  left: -14px;
+}
+
+@media screen and (max-width: 600px) {
+  .main-timeline-2::after {
+    left: 31px;
+  }
+
+  .timeline-2 {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-2::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .left-2::after,
+  .right-2::after {
+    left: 18px;
+  }
+
+  .left-2::before {
+    right: auto;
+  }
+
+  .right-2 {
+    left: 0%;
+  }
+}
+.timeline-year {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ab7200;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.timeline-2.visible .timeline-year {
+  opacity: 1;
+  transform: translateY(0);
+}
