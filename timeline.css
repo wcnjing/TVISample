@@ -169,17 +169,17 @@ body {
     }
     
     .timeline-line {
-        left: 30px;
+        left: 25px;
         transform: none;
     }
     
     .timeline-item {
         position: relative !important;
         top: auto !important;
-        margin-bottom: 40px;
-        flex-direction: row;
-        align-items: center;
-        padding-left: 70px;
+        margin-bottom: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 50px;
     }
     
     .timeline-item.left,
@@ -189,15 +189,16 @@ body {
     
     .timeline-item .timeline-dot {
         position: absolute !important;
-        left: 30px !important;
+        left: 0px !important;
+        top: 0px !important;
         transform: none !important;
     }
     
     .timeline-item .polaroid {
         order: 1 !important;
         position: static !important;
-        margin: 0 20px 0 0 !important;
-        transform: rotate(-3deg) !important;
+        margin: 0 0 15px 0 !important;
+        transform: none !important;
     }
     
     .timeline-item .timeline-text {
@@ -210,7 +211,7 @@ body {
     }
     
     .polaroid img {
-        width: 120px;
-        height: 90px;
+        width: 250px;
+        height: 180px;
     }
 }

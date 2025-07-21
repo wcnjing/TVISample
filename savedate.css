@@ -181,7 +181,6 @@ body {
   margin-bottom: 5px;
   background: rgba(171, 114, 0, 0.8);
   border: 1px solid rgba(171, 114, 0, 0.3);
-  border-radius: 12px;
   padding: 20px 15px;
   box-shadow: 0 4px 12px rgba(171, 114, 0, 0.2);
   min-width: 80px;
@@ -502,5 +501,47 @@ body {
   }
   .add-to-calendar-btn i {
     font-size: 1rem;
+  }
+}
+/* Static Butterfly positioned after "SAVE" */
+.save-the-date-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+.butterfly-savedate {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url('images/butterfly.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 10;
+  pointer-events: none;
+  top: 22%;
+  left: 72%;
+  transform: translateY(-50%) scaleX(1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .butterfly-savedate {
+    width: 30px;
+    height: 30px;
+    left: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .butterfly-savedate {
+    width: 25px;
+    height: 25px;
+    left: 38%;
   }
 }
