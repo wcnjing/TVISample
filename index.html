@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="savedate.css" />
     <link rel="stylesheet" href="timeline.css" />
+    <link rel="stylesheet" href="rsvp.css" />
+
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -34,6 +36,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <!-- MDB JS -->
@@ -127,6 +133,10 @@
     <!-- timeline -->
     <section style="background-color: #f0f2f5">
       <div class="container py-5">
+        <!-- Header -->
+        <div class="save-the-date-header">
+          <h2 class="text-title">Love Story</h2>
+        </div>
         <div class="main-timeline-2">
           <div class="timeline-2 left-2">
             <div class="timeline-year">2023</div>
@@ -148,7 +158,7 @@
           </div>
 
           <div class="timeline-2 right-2">
-            <div class="timeline-year">2024</div>
+            <div class="timeline-year">2025</div>
 
             <div class="card">
               <img
@@ -195,7 +205,6 @@
       <div class="save-the-date-header">
         <h1>SAVE <span class="script-text">the</span> DATE</h1>
       </div>
-      <!-- Names -->
 
       <!-- Calendar Date -->
       <div class="calendar-section">
@@ -213,7 +222,7 @@
       </div>
 
       <!-- Address -->
-      <div class="address-section">123 Grand Hotel, Singapore, ST 12345</div>
+      <div class="address-section">Grand Hyatt Hotel, Singapore</div>
 
       <!-- Countdown Timer -->
       <div class="countdown-section">
@@ -253,6 +262,13 @@
         </button>
       </div>
 
+      <div class="calendar-button-section">
+        <button class="add-to-calendar-btn" onclick="openGoogleMaps()">
+          <i class="fas fa-location"></i>
+          View on Map
+        </button>
+      </div>
+
       <!-- Photo Grid -->
       <div class="photo-grid">
         <div class="photo-container">
@@ -278,8 +294,127 @@
       <!-- Confetti Container -->
       <div class="confetti" id="confetti"></div>
     </div>
+    <div class="floral-decoration floral-top-left"></div>
+    <div class="floral-decoration floral-top-right"></div>
+    <div class="floral-decoration floral-bottom-left"></div>
+    <div class="floral-decoration floral-bottom-right"></div>
+
+    <section class="rsvp">
+      <div class="container">
+        <div class="header">
+          <h1 class="couple-names" style="margin-top: 10px">RSVP</h1>
+
+          <h1 class="couple-names">Alex & Mason</h1>
+          <p class="wedding-date">August 16, 2025</p>
+          <p class="subtitle">We can't wait to celebrate with you!</p>
+        </div>
+
+        <div class="form-container">
+          <div class="form-note">
+            Please respond by August 10, 2025. We're so excited to share our
+            special day with you!
+          </div>
+
+          <form id="rsvpForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label>Will you be attending? *</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="attendance" value="yes" required />
+                  <span>✨ Yes, I'll be there!</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="attendance" value="no" required />
+                  <span>💔 Sorry, can't make it</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group" id="guestSection" style="display: none">
+              <label for="guestCount"
+                >Number of Guests (including yourself)</label
+              >
+              <select id="guestCount" name="guestCount">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+              </select>
+            </div>
+
+            <div
+              class="form-group"
+              id="guestNamesSection"
+              style="display: none"
+            >
+              <label for="guestNames">Guest Names</label>
+              <textarea
+                id="guestNames"
+                name="guestNames"
+                placeholder="Please list the names of all guests attending..."
+              ></textarea>
+            </div>
+
+            <div
+              class="dietary-section"
+              id="dietarySection"
+              style="display: none"
+            >
+              <div class="form-group">
+                <label for="dietaryRestrictions"
+                  >Dietary Restrictions or Allergies</label
+                >
+                <textarea
+                  id="dietaryRestrictions"
+                  name="dietaryRestrictions"
+                  placeholder="Please let us know about any dietary restrictions, food allergies, or special meal requirements..."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Special Message for the Couple</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Share your well wishes, favorite memory, or anything you'd like Alex & Mason to know..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send RSVP</button>
+          </form>
+
+          <div class="success-message" id="successMessage">
+            <h3>Thank you for your RSVP! 💕</h3>
+            <p>
+              We've received your response and can't wait to celebrate with you!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
   <script src="script.js" defer></script>
   <script src="timeline.js"></script>
   <script src="savedate.js"></script>
+  <script src="rsvp.js"></script>
 </html>

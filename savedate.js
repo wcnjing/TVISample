@@ -27,7 +27,7 @@ function addToGoogleCalendar() {
   const eventTitle = "Alex & Mason's Wedding";
   const eventDate = "20250816T180000";
   const eventEndDate = "20250816T210000";
-  const eventLocation = "123 Grand Hotel, Singapore, ST 12345";
+  const eventLocation = "Grand Hyatt, Singapore";
   const eventDescription =
     "Join us for the wedding celebration of Alex and Mason!";
   const timeZone = "Asia/Singapore";
@@ -108,6 +108,14 @@ function updateCountdown() {
       celebrationTriggered = true;
     }
   }
+}
+
+function openGoogleMaps() {
+  const address = "Grand Hyatt Hotel, Singapore";
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    address
+  )}`;
+  window.open(googleMapsUrl, "_blank");
 }
 
 // Update countdown every second
