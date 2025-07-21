@@ -1,131 +1,216 @@
-.main-timeline-2 {
-  position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.main-timeline-2::after {
-  content: "";
-  position: absolute;
-  width: 3px;
-  background-color: #ccc;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -1.5px;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: all 0.6s ease-in-out;
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f6f3;
+    color: #4a3c28;
 }
 
-.main-timeline-2.active::after {
-  transform: scaleY(1);
-  background-color: #ab7200;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 40px;
 }
 
-.timeline-2 {
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
+.title {
+    text-align: center;
+    margin-bottom: 100px;
 }
 
-.timeline-2.visible {
-  opacity: 1;
-  transform: translateY(0);
+.title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #2c2521;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
-.timeline-2::after {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -11px;
-  background-color: #ab7200;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.left-2 {
-  padding: 0px 40px 20px 0px;
-  left: 0;
-}
-
-.right-2 {
-  padding: 0px 0px 20px 40px;
-  left: 50%;
-}
-
-.left-2::before {
-  content: " ";
-  position: absolute;
-  top: 18px;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-.right-2::before {
-  content: " ";
-  position: absolute;
-  top: 18px;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-.right-2::after {
-  left: -14px;
-}
-
-@media screen and (max-width: 600px) {
-  .main-timeline-2::after {
-    left: 31px;
-  }
-
-  .timeline-2 {
+.timeline-container {
+    position: relative;
+    height: 850px;
+    margin: 0 auto;
     width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-  .timeline-2::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-  .left-2::after,
-  .right-2::after {
-    left: 18px;
-  }
-
-  .left-2::before {
-    right: auto;
-  }
-
-  .right-2 {
-    left: 0%;
-  }
-}
-.timeline-year {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ab7200;
-  text-align: center;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
 }
 
-.timeline-2.visible .timeline-year {
-  opacity: 1;
-  transform: translateY(0);
+/* Vertical timeline line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #333;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Left side items */
+.timeline-item.left {
+    justify-content: flex-start;
+}
+
+.timeline-item.left .polaroid {
+    order: 1;
+    margin-right: 20px;
+}
+
+.timeline-item.left .timeline-dot {
+    order: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item.left .timeline-text {
+    order: 3;
+    margin-left: 20px;
+    position: absolute;
+    left: calc(50% + 30px);
+}
+
+/* Right side items */
+.timeline-item.right {
+    justify-content: flex-end;
+}
+
+.timeline-item.right .timeline-text {
+    order: 1;
+    margin-right: 20px;
+    position: absolute;
+    right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item.right .timeline-dot {
+    order: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item.right .polaroid {
+    order: 3;
+    margin-left: 20px;
+}
+
+.polaroid {
+    background: #fff;
+    padding: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.polaroid img {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: #333;
+    border-radius: 50%;
+    border: 3px solid #f8f6f3;
+    z-index: 3;
+}
+
+.timeline-text {
+    font-family: 'Inter', sans-serif;
+}
+
+.year {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+
+.phase {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.names {
+    text-align: center;
+    margin-top: 80px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #4a3c28;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .timeline-container {
+        height: auto;
+        padding: 20px;
+    }
+    
+    .timeline-line {
+        left: 30px;
+        transform: none;
+    }
+    
+    .timeline-item {
+        position: relative !important;
+        top: auto !important;
+        margin-bottom: 40px;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 70px;
+    }
+    
+    .timeline-item.left,
+    .timeline-item.right {
+        justify-content: flex-start;
+    }
+    
+    .timeline-item .timeline-dot {
+        position: absolute !important;
+        left: 30px !important;
+        transform: none !important;
+    }
+    
+    .timeline-item .polaroid {
+        order: 1 !important;
+        position: static !important;
+        margin: 0 20px 0 0 !important;
+        transform: rotate(-3deg) !important;
+    }
+    
+    .timeline-item .timeline-text {
+        order: 2 !important;
+        position: static !important;
+        margin: 0 !important;
+        text-align: left !important;
+        left: auto !important;
+        right: auto !important;
+    }
+    
+    .polaroid img {
+        width: 120px;
+        height: 90px;
+    }
 }

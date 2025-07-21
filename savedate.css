@@ -59,6 +59,7 @@ body {
   border-radius: 20px;
 }
 .date-overlay {
+  font-family: "DM Serif Text", serif;
   position: absolute;
   bottom: 20px;
   left: 50%;
