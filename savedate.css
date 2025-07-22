@@ -20,7 +20,7 @@ body {
   font-size: 4rem;
   font-weight: 400;
   letter-spacing: 8px;
-  color: #2c2c2c;
+  color: #2c3e50;
   margin: 0;
   text-transform: uppercase;
   font-weight: bold;
@@ -149,7 +149,7 @@ body {
 }
 .calendar-time {
   font-size: 1.1rem;
-  color: #ab7200;
+  color: #6a5948;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -179,7 +179,7 @@ body {
   color: white;
   line-height: 1;
   margin-bottom: 5px;
-  background: rgba(171, 114, 0, 0.8);
+  background: #6a5948;
   border: 1px solid rgba(171, 114, 0, 0.3);
   padding: 20px 15px;
   box-shadow: 0 4px 12px rgba(171, 114, 0, 0.2);
@@ -307,7 +307,7 @@ body {
 }
 
 .add-to-calendar-btn {
-  background: linear-gradient(135deg, #ab7200 0%, #d4940a 100%);
+  background: linear-gradient(135deg, #6a5948 0%, #574839  100%);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -327,7 +327,7 @@ body {
 .add-to-calendar-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(171, 114, 0, 0.4);
-  background: linear-gradient(135deg, #d4940a 0%, #ab7200 100%);
+  background: linear-gradient(135deg, #6a5948 0%, #574839  100%);
 }
 
 .add-to-calendar-btn:active {

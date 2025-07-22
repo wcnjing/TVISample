@@ -316,113 +316,91 @@
     <div class="floral-decoration floral-bottom-left"></div>
     <div class="floral-decoration floral-bottom-right"></div>
 
-    <section class="rsvp">
-      <div class="container" style="margin-top: -80px">
-        <div class="header">
-          <h1
-            class="schedule-title"
-            id="rsvp"
-            style="margin-top: 10px; font-size: 4rem"
-          >
-            RSVP
-          </h1>
+    <div class="luxury-rsvp-wrapper">
+        <div class="luxury-rsvp-container">
+            <div class="luxury-left-panel">
+            
+      
+                
+                <div class="luxury-couple-names">Alex & Mason</div>
+                
+             
+                
+               
+            </div>
 
-          <h1 class="couple-names">Alex & Mason</h1>
-          <p class="wedding-date">August 16, 2025</p>
+            <div class="luxury-right-panel">
+                <div class="luxury-form-header">
+                    <h2 class="luxury-form-title">RSVP</h2>
+                    <p class="luxury-form-subtitle">Kindly respond by July First</p>
+                </div>
+
+                <form id="luxuryRsvpForm">
+                    <div class="luxury-form-row">
+                        <div class="luxury-form-group">
+                            <label class="luxury-label" for="luxuryFirstName">First Name</label>
+                            <input class="luxury-input" type="text" id="luxuryFirstName" name="firstName" required />
+                        </div>
+                        <div class="luxury-form-group">
+                            <label class="luxury-label" for="luxuryLastName">Last Name</label>
+                            <input class="luxury-input" type="text" id="luxuryLastName" name="lastName" required />
+                        </div>
+                    </div>
+
+                    <div class="luxury-form-group">
+                        <label class="luxury-label">Attendance</label>
+                        <div class="luxury-radio-group">
+                            <div class="luxury-radio-option">
+                                <input type="radio" id="luxuryAttendYes" name="attendance" value="yes" required />
+                                <label class="luxury-radio-label" for="luxuryAttendYes">Accept</label>
+                            </div>
+                            <div class="luxury-radio-option">
+                                <input type="radio" id="luxuryAttendNo" name="attendance" value="no" required />
+                                <label class="luxury-radio-label" for="luxuryAttendNo">Decline</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="luxury-form-group luxury-hidden" id="luxuryGuestSection">
+                        <label class="luxury-label" for="luxuryGuestCount">Number of Guests</label>
+                        <select class="luxury-select" id="luxuryGuestCount" name="guestCount">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                        </select>
+                    </div>
+
+                    <div class="luxury-form-group luxury-hidden" id="luxuryGuestNamesSection">
+                        <label class="luxury-label" for="luxuryGuestNames">Guest Names</label>
+                        <textarea class="luxury-textarea" id="luxuryGuestNames" name="guestNames" placeholder="Please provide names of attending guests"></textarea>
+                    </div>
+
+                    <div class="luxury-form-group luxury-hidden" id="luxuryDietarySection">
+                        <label class="luxury-label" for="luxuryDietaryRestrictions">Dietary Requirements</label>
+                        <textarea class="luxury-textarea" id="luxuryDietaryRestrictions" name="dietaryRestrictions" placeholder="Any dietary restrictions or allergies"></textarea>
+                    </div>
+
+                    <div class="luxury-form-group">
+                        <label class="luxury-label" for="luxuryMessage">Message</label>
+                        <textarea class="luxury-textarea" id="luxuryMessage" name="message" placeholder="Your message to the couple"></textarea>
+                    </div>
+
+                    <div class="luxury-checkbox-group">
+                        <input type="checkbox" id="luxuryNewsletter" name="newsletter">
+                        <label class="luxury-checkbox-label" for="luxuryNewsletter">I would like to receive wedding updates and information</label>
+                    </div>
+
+                    <button type="submit" class="luxury-submit-btn">Submit Response</button>
+                </form>
+
+                <div class="luxury-success-message" id="luxurySuccessMessage">
+                    <h3>Thank You</h3>
+                    <p>Your response has been received. We look forward to celebrating with you.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="form-container">
-          <a></a>
-          <a></a>
-          <form id="rsvpForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" required />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label>Will you be attending? *</label>
-              <div class="radio-group">
-                <label class="radio-option">
-                  <input type="radio" name="attendance" value="yes" required />
-                  <span>✨ Yes, I'll be there!</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="attendance" value="no" required />
-                  <span>💔 Sorry, can't make it</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group" id="guestSection" style="display: none">
-              <label for="guestCount"
-                >Number of Guests (including yourself)</label
-              >
-              <select id="guestCount" name="guestCount">
-                <option value="1">1 Guest</option>
-                <option value="2">2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests</option>
-              </select>
-            </div>
-
-            <div
-              class="form-group"
-              id="guestNamesSection"
-              style="display: none"
-            >
-              <label for="guestNames">Guest Names</label>
-              <textarea
-                id="guestNames"
-                name="guestNames"
-                placeholder="Please list the names of all guests attending..."
-              ></textarea>
-            </div>
-
-            <div
-              class="dietary-section"
-              id="dietarySection"
-              style="display: none"
-            >
-              <div class="form-group">
-                <label for="dietaryRestrictions"
-                  >Dietary Restrictions or Allergies</label
-                >
-                <textarea
-                  id="dietaryRestrictions"
-                  name="dietaryRestrictions"
-                  placeholder="Please let us know about any dietary restrictions, food allergies, or special meal requirements..."
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Special Message for the Couple</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Share your well wishes, favorite memory, or anything you'd like Alex & Mason to know..."
-              ></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Send RSVP</button>
-          </form>
-
-          <div class="success-message" id="successMessage">
-            <h3>Thank you for your RSVP! 💕</h3>
-            <p>
-              We've received your response and can't wait to celebrate with you!
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
     <!-- best wishes -->
 
     <section class="wedding-wishes-section">

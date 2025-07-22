@@ -24,7 +24,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             font-weight: 400;
-            color: #6b5b73;
+            color: #2c3e50;
             margin-bottom: 50px;
             line-height: 1.2;
             position: relative;
@@ -67,7 +67,7 @@
         .event-time {
             font-weight: 600;
             font-size: 1.2rem;
-            color: #6b5b73;
+            color: #6a5948 ;
             min-width: 150px;
             text-align: left;
             letter-spacing: 0.5px;
@@ -76,7 +76,7 @@
         .event-name {
             font-weight: 400;
             font-size: 1.2rem;
-            color: #4a4a4a;
+            color: #574839 ;
             text-transform: uppercase;
             letter-spacing: 2px;
             flex: 1;

@@ -105,6 +105,8 @@
   opacity: 1;
 }
 
+
+
 .carousel-track {
   display: flex;
   height: 100%;
@@ -123,9 +125,9 @@
 
 .wish-card {
   background: white;
-  border-radius: 15px;
+  
   box-shadow: 0 15px 30px rgba(171, 114, 0, 0.12);
-  border: 2px solid #e8d5c9;
+  border: 2px solid #574839;
   width: 280px;
   height: 350px;
   padding: 20px;
@@ -187,7 +189,7 @@
   letter-spacing: 1px;
   margin-bottom: 12px;
   padding-bottom: 10px;
-  border-bottom: 2px solid rgba(171, 114, 0, 0.2);
+  border-bottom: 0.75px solid #574839;
 }
 
 .wish-message {
