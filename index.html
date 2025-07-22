@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="savedate.css" />
     <link rel="stylesheet" href="timeline.css" />
     <link rel="stylesheet" href="rsvp.css" />
+    <link rel="stylesheet" href="bestwishes.css" />
 
     <!-- Font Awesome -->
     <link
@@ -318,7 +319,13 @@
     <section class="rsvp">
       <div class="container" style="margin-top: -80px">
         <div class="header">
-          <h1 class="couple-names" id="rsvp" style="margin-top: 10px">RSVP</h1>
+          <h1
+            class="schedule-title"
+            id="rsvp"
+            style="margin-top: 10px; font-size: 4rem"
+          >
+            RSVP
+          </h1>
 
           <h1 class="couple-names">Alex & Mason</h1>
           <p class="wedding-date">August 16, 2025</p>
@@ -416,13 +423,38 @@
         </div>
       </div>
     </section>
+    <!-- best wishes -->
+
+    <section class="wedding-wishes-section">
+      <div class="loading-message" id="loadingMessage">
+        <div class="loading-spinner"></div>
+        Loading wedding wishes...
+      </div>
+
+      <h1 class="schedule-title">Best Wishes</h1>
+
+      <div class="carousel-container" id="carouselContainer">
+        <div class="carousel-track" id="carousel-track">
+          <!-- Cards will be dynamically generated here -->
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-body-tertiary text-center">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: #ffe7d7">
+        © 2025 Copyright: The Velvet Invite. All rights reserved.
+      </div>
+      <!-- Copyright -->
+    </footer>
   </body>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
+  <script src="bestwishes.js"></script>
   <script src="script.js" defer></script>
   <script src="timeline.js"></script>
   <script src="schedule.css"></script>
   <script src="savedate.js"></script>
   <script src="rsvp.js"></script>
+  <script></script>
 </html>

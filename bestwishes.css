@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wedding-wishes-section {
+  font-family: "Georgia", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(171, 114, 0, 0.9);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main-title {
+  font-size: 3rem;
+  color: #8b5a5a;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(171, 114, 0, 0.1);
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.main-title::before,
+.main-title::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  opacity: 0.7;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.main-title::before {
+  left: -60px;
+}
+
+.main-title::after {
+  right: -60px;
+  animation-delay: 1s;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 100vw;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  touch-action: pan-y pinch-zoom;
+  padding: 10px 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-container.loaded {
+  opacity: 1;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.1s ease-out;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-track.auto-scrolling {
+  transition: transform 0.5s linear;
+}
+
+.wish-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(171, 114, 0, 0.12);
+  border: 2px solid #e8d5c9;
+  width: 280px;
+  height: 350px;
+  padding: 20px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+  transform: scale(1.02) translateY(-3px);
+  box-shadow: 0 25px 45px rgba(171, 114, 0, 0.2);
+  z-index: 5;
+}
+
+.wish-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(171, 114, 0, 0.03) 0%,
+    transparent 70%
+  );
+  animation: rotate 15s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sender-name {
+  color: #6b5b73;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(171, 114, 0, 0.2);
+}
+
+.wish-message {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.corner-hearts {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #ab7200;
+  opacity: 0.6;
+  font-size: 1.1rem;
+}
+
+.corner-hearts-bottom {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: #ab7200;
+  opacity: 0.6;
+  font-size: 1.1rem;
+}
+
+.no-messages {
+  text-align: center;
+  color: #ab7200;
+  font-size: 1.2rem;
+  margin: 50px 0;
+  font-style: italic;
+}
+
+.error-message {
+  background: #ffebee;
+  border: 2px solid #f44336;
+  color: #d32f2f;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+
+  .main-title::before,
+  .main-title::after {
+    font-size: 1.5rem;
+  }
+
+  .main-title::before {
+    left: -40px;
+  }
+
+  .main-title::after {
+    right: -40px;
+  }
+
+  .carousel-container {
+    height: 350px;
+  }
+
+  .wish-card {
+    width: 240px;
+    height: 280px;
+    padding: 18px;
+    margin: 0 15px;
+  }
+
+  .sender-name {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .wish-message {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .main-title::before,
+  .main-title::after {
+    display: none;
+  }
+}
