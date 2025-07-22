@@ -437,7 +437,7 @@ body {
 }
 @media (max-width: 576px) {
   .save-the-date-header h1 {
-    font-size: 2rem;
+    font-size: 3.5rem;
     letter-spacing: 2px;
     margin-bottom: -30px;
   }

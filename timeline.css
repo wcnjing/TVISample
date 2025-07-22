@@ -214,4 +214,10 @@ body {
         width: 250px;
         height: 180px;
     }
+    .names{
+      font-size: 2rem;
+      text-align: left;
+      padding-left: 20px;
+    }
+
 }

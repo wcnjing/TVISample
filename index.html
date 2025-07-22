@@ -8,9 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=GFS+Didot&display=swap"
+      
       rel="stylesheet"
     />
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="schedule.css" />
     <link rel="stylesheet" href="savedate.css" />
     <link rel="stylesheet" href="timeline.css" />
     <link rel="stylesheet" href="rsvp.css" />
@@ -53,8 +56,6 @@
           <li><a href="#schedule">SCHEDULE</a></li>
         </ul>
         <ul class="navbar-right">
-          <li><a href="#hotels">HOTELS & TRAVEL</a></li>
-          <li><a href="#gallery">GALLERY</a></li>
           <li><a href="#rsvp">RSVP</a></li>
         </ul>
       </nav>
@@ -89,7 +90,7 @@
 
     <div class="container">
         <div class="title">
-            <h1>Our Love Story</h1>
+            <h1>Every Moment With You</h1>
         </div>
         
         <div class="timeline-container">
@@ -169,8 +170,50 @@
             </div>
         </div>
         
-        <div class="names">Sarah & David</div>
+        <div class="names">Alex & Mason</div>
     </div>
+<!-- Schedule -->
+  <div class="schedule-container" id="schedule">
+        <div class="decorative-flourish"></div>
+        <div class="decorative-flourish-right"></div>
+        
+        <h1 class="schedule-title">Order of Events</h1>
+        
+        <ul class="events-list">
+            <li class="event-item">
+                <span class="event-time">11:00 AM</span>
+                <span class="event-name">Ceremony</span>
+            </li>
+            <li class="event-item">
+                <span class="event-time">12:00 PM</span>
+                <span class="event-name">Welcome Toast</span>
+            </li>
+            <li class="event-item">
+                <span class="event-time">1:00 PM</span>
+                <span class="event-name">Lunch</span>
+            </li>
+            <li class="event-item">
+                <span class="event-time">3:00 PM</span>
+                <span class="event-name">Cake Cutting</span>
+            </li>
+            <li class="event-item">
+                <span class="event-time">8:00 PM</span>
+                <span class="event-name">Buffet Dinner</span>
+            </li>
+            <li class="event-item">
+                <span class="event-time">8:30 PM</span>
+                <span class="event-name">Cake Cutting</span>
+            </li>
+            <li class="event-item">
+                <span class="event-time">11:00 PM</span>
+                <span class="event-name">Fireworks</span>
+            </li>
+        </ul>
+        
+        <div class="couple-signature">Alex & Mason</div>
+    </div>
+
+
     <!-- save date -->
     <div class="container-fluid">
     <div class="save-the-date-header">
@@ -275,19 +318,19 @@
     <section class="rsvp">
       <div class="container">
         <div class="header">
-          <h1 class="couple-names" style="margin-top: 10px">RSVP</h1>
+          <h1 class="couple-names" id= "rsvp"style="margin-top: 10px">RSVP</h1>
+
 
           <h1 class="couple-names">Alex & Mason</h1>
           <p class="wedding-date">August 16, 2025</p>
-          <p class="subtitle">We can't wait to celebrate with you!</p>
         </div>
 
         <div class="form-container">
-          <div class="form-note">
-            Please respond by August 10, 2025. We're so excited to share our
-            special day with you!
+          <div style="font-style: italic; font-weight: 100;"> 
+            Reply by August 10, 2025
           </div>
-
+        <a></a>
+        <a></a>
           <form id="rsvpForm">
             <div class="form-row">
               <div class="form-group">
@@ -388,6 +431,7 @@
 
   <script src="script.js" defer></script>
   <script src="timeline.js"></script>
+  <script src="schedule.css"></script>
   <script src="savedate.js"></script>
   <script src="rsvp.js"></script>
 </html>

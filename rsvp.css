@@ -6,7 +6,7 @@
 
 .rsvp {
   font-family: "Cormorant Garamond", serif;
-  background: url("images/background.png") center/cover no-repeat;
+ /* background: url("images/background.png") center/cover no-repeat; */
   min-height: 100vh;
   padding: 20px;
   position: relative;
@@ -81,7 +81,7 @@
 }
 
 .couple-names {
-  font-family: "Dancing Script", cursive;
+  font-family: "dm serif text", serif;
   font-size: 4rem;
   color: #8b5a5a;
   margin-bottom: 10px;
@@ -296,9 +296,5 @@ textarea {
   color: white;
 }
 
-@media (max-width: 578px) {
-  .rsvp {
-    background: url("images/background_portrait.png") top center/cover no-repeat;
-    background-size: 700px;
-  }
-}
+
+
