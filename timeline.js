@@ -1,28 +1,55 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible");
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+function animateOnScroll() {
+  const timelineItems = document.querySelectorAll(".timeline-item");
+  const names = document.querySelector(".names");
+  const windowHeight = window.innerHeight;
+  const scrollTop = window.pageYOffset;
 
-  document
-    .querySelectorAll(".timeline-2")
-    .forEach((el) => observer.observe(el));
+  timelineItems.forEach((item) => {
+    const itemTop = item.offsetTop + item.offsetParent.offsetTop;
+    const itemHeight = item.offsetHeight;
+    const itemBottom = itemTop + itemHeight;
 
-  const timelineLine = document.querySelector(".main-timeline-2");
-  window.addEventListener("scroll", () => {
-    const rect = timelineLine.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      timelineLine.classList.add("active");
+    // Check if item is in viewport (with some margin for better effect)
+    const isInViewport =
+      scrollTop + windowHeight > itemTop + itemHeight * 0.2 &&
+      scrollTop < itemBottom - itemHeight * 0.2;
+
+    if (isInViewport) {
+      item.classList.add("animate");
     } else {
-      timelineLine.classList.remove("active");
+      // Remove animation when out of view to re-trigger when scrolling back
+      item.classList.remove("animate");
     }
   });
+
+  // Animate names section
+  if (names) {
+    const namesTop = names.offsetTop;
+    const namesBottom = namesTop + names.offsetHeight;
+    const namesInViewport =
+      scrollTop + windowHeight > namesTop + 50 && scrollTop < namesBottom + 200;
+
+    if (namesInViewport) {
+      names.classList.add("animate");
+    } else {
+      names.classList.remove("animate");
+    }
+  }
+}
+
+// Run on scroll with throttling for performance
+let ticking = false;
+function requestTick() {
+  if (!ticking) {
+    requestAnimationFrame(animateOnScroll);
+    ticking = true;
+  }
+}
+
+window.addEventListener("scroll", () => {
+  requestTick();
+  ticking = false;
 });
+
+// Run once on page load
+document.addEventListener("DOMContentLoaded", animateOnScroll);

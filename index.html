@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="rsvp.css" />
     <link rel="stylesheet" href="bestwishes.css" />
     <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="ourstory.css" />
 
     <!-- Font Awesome -->
     <link
@@ -68,27 +69,29 @@
         <h1>ALEX & MASON</h1>
       </div>
     </section>
-    <section class="text-section">
-      <div class="split-container">
-        <div class="split-image">
-          <div class="image-frame"></div>
-        </div>
-        <div class="split-text">
-          <div class="text-container">
-            <h2 class="text-title">OUR STORY</h2>
-            <p class="text-content">
-              It all started on a rainy Tuesday morning at Café Luna when Alex
-              accidentally bumped into Mason, spilling coffee all over his
-              laptop. What began as frantic apologies turned into a three-hour
-              conversation about everything and nothing. Three months later,
-              Mason surprised Alex with a weekend trip to the mountains where
-              they spent hours hiking, getting lost, and sharing stories under
-              the stars. It was there, sitting by a campfire, that they both
-              knew this was something special.
-            </p>
+    <section class="story-section">
+      <section class="text-section">
+        <div class="split-container">
+          <div class="split-image">
+            <div class="image-frame"></div>
+          </div>
+          <div class="split-text">
+            <div class="text-container">
+              <h2 class="text-title" id="storyTitle">OUR STORY</h2>
+              <p class="text-content" id="storyContent">
+                It all started on a rainy Tuesday morning at Café Luna when Alex
+                accidentally bumped into Mason, spilling coffee all over his
+                laptop. What began as frantic apologies turned into a three-hour
+                conversation about everything and nothing. Three months later,
+                Mason surprised Alex with a weekend trip to the mountains where
+                they spent hours hiking, getting lost, and sharing stories under
+                the stars. It was there, sitting by a campfire, that they both
+                knew this was something special.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </section>
 
     <div class="container">
@@ -97,10 +100,8 @@
       </div>
 
       <div class="timeline-container">
-        <!-- Vertical timeline line -->
         <div class="timeline-line"></div>
 
-        <!-- 2019 - Left side -->
         <div class="timeline-item left" style="top: 50px">
           <div class="polaroid">
             <img src="images/Carousell-Image-1.jpg" alt="Friends" />
@@ -112,7 +113,6 @@
           </div>
         </div>
 
-        <!-- 2020 - Right side -->
         <div class="timeline-item right" style="top: 180px">
           <div class="timeline-text">
             <div class="year">2020</div>
@@ -124,7 +124,6 @@
           </div>
         </div>
 
-        <!-- 2022 - Left side -->
         <div class="timeline-item left" style="top: 310px">
           <div class="polaroid">
             <img src="images/Carousell-Image-3.png" alt="Engaged" />
@@ -136,7 +135,6 @@
           </div>
         </div>
 
-        <!-- 2023 - Right side -->
         <div class="timeline-item right" style="top: 440px">
           <div class="timeline-text">
             <div class="year">2023</div>
@@ -148,7 +146,6 @@
           </div>
         </div>
 
-        <!-- 2024 - Left side -->
         <div class="timeline-item left" style="top: 570px">
           <div class="polaroid">
             <img src="images/Carousell-Image-5.png" alt="Memories" />
@@ -160,7 +157,6 @@
           </div>
         </div>
 
-        <!-- 2025 - Right side -->
         <div class="timeline-item right" style="top: 700px">
           <div class="timeline-text">
             <div class="year">2025</div>
@@ -175,6 +171,7 @@
 
       <div class="names">Alex & Mason</div>
     </div>
+
     <!-- Schedule Section -->
     <section class="schedule-section">
       <div class="schedule-container" id="schedule">
@@ -639,14 +636,18 @@
       </div>
     </footer>
   </body>
+
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
   <script src="bestwishes.js"></script>
+
   <script src="script.js" defer></script>
-  <script src="timeline.js"></script>
   <script src="savedate.js"></script>
   <script src="rsvp.js"></script>
   <script src="schedule.js"></script>
+  <script src="ourstory.js"></script>
+  <script src="timeline.js"></script>
 
   <script></script>
 </html>
