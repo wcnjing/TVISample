@@ -307,7 +307,7 @@ body {
 }
 
 .add-to-calendar-btn {
-  background: linear-gradient(135deg, #6a5948 0%, #574839  100%);
+  background: linear-gradient(135deg, #6a5948 0%, #574839 100%);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -327,7 +327,7 @@ body {
 .add-to-calendar-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(171, 114, 0, 0.4);
-  background: linear-gradient(135deg, #6a5948 0%, #574839  100%);
+  background: linear-gradient(135deg, #6a5948 0%, #574839 100%);
 }
 
 .add-to-calendar-btn:active {
@@ -437,7 +437,7 @@ body {
 }
 @media (max-width: 576px) {
   .save-the-date-header h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     letter-spacing: 2px;
     margin-bottom: -30px;
   }
@@ -517,7 +517,7 @@ body {
   position: absolute;
   width: 100px;
   height: 100px;
-  background-image: url('images/butterfly.gif');
+  background-image: url("images/butterfly.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -534,7 +534,7 @@ body {
   .butterfly-savedate {
     width: 30px;
     height: 30px;
-    left: 40%;
+    left: 60%; /* Moved to the right */
   }
 }
 
@@ -542,6 +542,6 @@ body {
   .butterfly-savedate {
     width: 25px;
     height: 25px;
-    left: 38%;
+    left: 65%; /* Moved to the right */
   }
 }

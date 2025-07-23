@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="bestwishes.css" />
     <link rel="stylesheet" href="footer.css" />
     <link rel="stylesheet" href="ourstory.css" />
+    <link rel="stylesheet" href="music.css" />
 
     <!-- Font Awesome -->
     <link
@@ -69,6 +70,22 @@
         <h1>ALEX & MASON</h1>
       </div>
     </section>
+
+    <!-- Background Music Audio Element -->
+    <audio id="backgroundMusic" loop>
+      <source src="music/weddingsong.m4a" type="audio/mpeg" />
+      <source src="music/weddingsong.m4a" type="audio/ogg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control Button -->
+    <button class="music-control" id="musicToggle" title="Toggle Music">
+      <i class="fas fa-volume-up" id="musicIcon"></i>
+    </button>
+
+    <!-- Volume Indicator -->
+    <div class="volume-indicator" id="volumeIndicator">Music Playing</div>
+
     <section class="story-section">
       <section class="text-section">
         <div class="split-container">
@@ -648,6 +665,7 @@
   <script src="schedule.js"></script>
   <script src="ourstory.js"></script>
   <script src="timeline.js"></script>
+  <script src="music.js"></script>
 
   <script></script>
 </html>

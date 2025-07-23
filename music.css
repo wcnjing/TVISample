@@ -1,0 +1,108 @@
+/* music controller */
+
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(106, 89, 72, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 60px; /* Increased from default */
+  height: 60px; /* Increased from default */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.music-control:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #b8a690, #a69580);
+}
+
+.music-control i {
+  font-size: 24px; /* Increased icon size */
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.music-control.playing {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(212, 196, 176, 0.7);
+  }
+  70% {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15),
+      0 0 0 10px rgba(212, 196, 176, 0);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(212, 196, 176, 0);
+  }
+}
+
+.music-control.muted {
+  background: linear-gradient(135deg, #8a8a8a, #6a6a6a);
+  animation: none;
+}
+
+.music-control.muted i {
+  color: #ffffff;
+}
+
+.music-control .fa-volume-up,
+.music-control .fa-volume-mute {
+  font-size: 24px; /* Even bigger option */
+}
+
+/* Volume indicator */
+.volume-indicator {
+  position: absolute;
+  bottom: 75px;
+  right: 15px;
+  background: rgba(42, 37, 32, 0.9);
+  color: #d4c4b0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 196, 176, 0.2);
+}
+
+.volume-indicator.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .music-control {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .music-control i {
+    font-size: 18px;
+  }
+
+  .volume-indicator {
+    bottom: 65px;
+    right: 10px;
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}

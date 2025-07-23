@@ -312,4 +312,8 @@ body {
     text-align: left;
     padding-left: 20px;
   }
+
+  .year {
+    margin-top: 40px;
+  }
 }
