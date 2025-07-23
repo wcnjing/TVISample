@@ -1,15 +1,4 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyD46R-12SbaDufubSjQD0cXye2HwxBQYJU",
-  authDomain: "invitation-sample-a00d5.firebaseapp.com",
-  projectId: "invitation-sample-a00d5",
-  storageBucket: "invitation-sample-a00d5.firebasestorage.app",
-  messagingSenderId: "286231843918",
-  appId: "1:286231843918:web:7337649879790a18581f1f",
-  measurementId: "G-M19S91RX10",
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+
 
 // Carousel variables
 let currentPosition = 0;
