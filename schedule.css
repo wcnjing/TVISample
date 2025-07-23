@@ -1,191 +1,260 @@
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #f5f1f0 0%, #f0e6e1 50%, #ede4df 100%);
-            min-height: 100vh;
-            color: #4a4a4a;
-            padding: 40px 20px;
-        }
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #4a4a4a;
+  padding: 0 20px;
+}
 
-        .schedule-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-        }
+.schedule-section {
+  background: white;
+}
 
-        .schedule-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: #2c3e50;
-            margin-bottom: 50px;
-            line-height: 1.2;
-            position: relative;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
+.schedule-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+}
 
-        .schedule-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #6b5b73, transparent);
-        }
+.schedule-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #6b5b73;
+  margin-bottom: 50px;
+  line-height: 1.2;
+  position: relative;
+  font-style: italic;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .events-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.schedule-title.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-        .event-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+.schedule-title::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #6b5b73, transparent);
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+}
 
-        .event-item:last-child {
-            /* No special styling needed */
-        }
+.schedule-title.animate::after {
+  opacity: 1;
+}
 
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .event-time {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: #6a5948 ;
-            min-width: 150px;
-            text-align: left;
-            letter-spacing: 0.5px;
-        }
+.event-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-        .event-name {
-            font-weight: 400;
-            font-size: 1.2rem;
-            color: #574839 ;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            flex: 1;
-            text-align: right;
-            position: relative;
-        }
+/* Staggered animation delays for event items */
+.event-item:nth-child(1).animate {
+  transition-delay: 0.1s;
+}
+.event-item:nth-child(2).animate {
+  transition-delay: 0.2s;
+}
+.event-item:nth-child(3).animate {
+  transition-delay: 0.3s;
+}
+.event-item:nth-child(4).animate {
+  transition-delay: 0.4s;
+}
+.event-item:nth-child(5).animate {
+  transition-delay: 0.5s;
+}
+.event-item:nth-child(6).animate {
+  transition-delay: 0.6s;
+}
+.event-item:nth-child(7).animate {
+  transition-delay: 0.7s;
+}
 
-        .event-name::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 4px;
-            background: #6b5b73;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+.event-time {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #6b5b73;
+  min-width: 150px;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
 
+.event-name {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  flex: 1;
+  text-align: right;
+  position: relative;
+}
 
+.event-name::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: #6b5b73;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-        .couple-signature {
-            position: absolute;
-            bottom: 30px;
-            right: 40px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #6b5b73;
-            opacity: 0.7;
-            transform: rotate(-5deg);
-            font-style: italic;
-        }
+.couple-signature {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #6b5b73;
+  opacity: 0;
+  transform: rotate(-5deg) translateY(20px);
+  font-style: italic;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s;
+}
 
-        .decorative-flourish {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 40px;
-            height: 40px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10c10 0 20 10 20 20s-10 20-20 20-20-10-20-20 10-20 20-20zm0 60c-5 0-10-5-10-10s5-10 10-10 10 5 10 10-5 10-10 10z" fill="%236b5b73" opacity="0.3"/></svg>') no-repeat center;
-            background-size: contain;
-            opacity: 0.4;
-        }
+.couple-signature.animate {
+  opacity: 0.7;
+  transform: rotate(-5deg) translateY(0);
+}
 
-        .decorative-flourish-right {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10c10 0 20 10 20 20s-10 20-20 20-20-10-20-20 10-20 20-20zm0 60c-5 0-10-5-10-10s5-10 10-10 10 5 10 10-5 10-10 10z" fill="%236b5b73" opacity="0.3"/></svg>') no-repeat center;
-            background-size: contain;
-            opacity: 0.4;
-            transform: scaleX(-1);
-        }
+.decorative-flourish {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10c10 0 20 10 20 20s-10 20-20 20-20-10-20-20 10-20 20-20zm0 60c-5 0-10-5-10-10s5-10 10-10 10 5 10 10-5 10-10 10z" fill="%236b5b73" opacity="0.3"/></svg>')
+    no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  transform: scale(0.8) rotate(-45deg);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        @media (max-width: 600px) {
-            .schedule-container {
-                padding: 40px 25px;
-                margin: 20px;
-            }
+.decorative-flourish.animate {
+  opacity: 0.4;
+  transform: scale(1) rotate(0deg);
+}
 
-            .schedule-title {
-                font-size: 3rem;
-                margin-bottom: 40px;
-            }
+.decorative-flourish-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10c10 0 20 10 20 20s-10 20-20 20-20-10-20-20 10-20 20-20zm0 60c-5 0-10-5-10-10s5-10 10-10 10 5 10 10-5 10-10 10z" fill="%236b5b73" opacity="0.3"/></svg>')
+    no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  transform: scaleX(-1) scale(0.8) rotate(45deg);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
 
-            .event-item {
-                flex-direction: column;
-                text-align: center;
-                padding: 15px 0;
-            }
+.decorative-flourish-right.animate {
+  opacity: 0.4;
+  transform: scaleX(-1) scale(1) rotate(0deg);
+}
 
-            .event-time {
-                margin-bottom: 8px;
-                min-width: auto;
-                text-align: center;
-            }
+/* Add content before schedule to enable scrolling */
+.intro-section {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #6b5b73;
+  text-align: center;
+  opacity: 0.8;
+}
 
-            .event-name {
-                text-align: center;
-            }
+@media (max-width: 600px) {
+  .schedule-container {
+    padding: 40px 25px;
+    margin: 20px auto;
+  }
 
-            .event-name::before {
-                display: none;
-            }
+  .schedule-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    transform: translateX(-50px);
+  }
 
-            .couple-signature {
-                bottom: 20px;
-                right: 25px;
-                font-size: 1.5rem;
-            }
-        }
+  .event-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 0;
+  }
 
-        /* Subtle animation for the whole container */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  .event-time {
+    margin-bottom: 8px;
+    min-width: auto;
+    text-align: center;
+  }
 
-        .schedule-container {
-            animation: fadeInUp 0.8s ease-out;
-        }
+  .event-name {
+    text-align: center;
+  }
 
+  .event-name::before {
+    display: none;
+  }
+
+  .couple-signature {
+    bottom: 20px;
+    right: 25px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Initial fade in animation for the whole container */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
