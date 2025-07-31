@@ -109,12 +109,12 @@ class MusicController {
     }
   }
 
-     showVolumeIndicator() {
-       this.volumeIndicator.textContent = this.isPlaying
-         ? "Music Playing"
-         : "Music Paused";
-       this.volumeIndicator.classList.add("show");
-     }
+  //  showVolumeIndicator() {
+  //    this.volumeIndicator.textContent = this.isPlaying
+  //      ? "Music Playing"
+  //      : "Music Paused";
+  //    this.volumeIndicator.classList.add("show");
+  //  }
 
   hideVolumeIndicator() {
     setTimeout(() => {
